@@ -1,19 +1,34 @@
 buildscript {
+
+    ext {
+        kotlin_version = '1.2.41'
+        ktx_version = '0.3'
+        support_library_version = '27.1.1'
+        okhttp_version = '3.9.0'
+        kotshi_version = '1.0.2'
+        retrofit_version = '2.3.0'
+        dagger_version = '2.15'
+        rxjava_version = '2.1.7'
+        rx_android_version = '2.0.2'
+    }
+
     repositories {
         jcenter()
+        google()
     }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.cookpad.android.licensetools:license-tools-plugin:0.23.0'
+        classpath 'com.android.tools.build:gradle:3.1.2'
+
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        classpath 'com.cookpad.android.licensetools:license-tools-plugin:1.2.0'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
-        // FIXME AS3.0以上でgoogle()に変更
-        maven {
-            url "https://maven.google.com"
-        }
+        google()
     }
 }
